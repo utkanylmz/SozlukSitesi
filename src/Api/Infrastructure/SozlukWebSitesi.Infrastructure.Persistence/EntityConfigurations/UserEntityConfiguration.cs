@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using SozlukWebSitesiApi.Domain.Models;
-using SozlukWebSitesi.Persistence.Context;
+using SozlukWebSitesi.Infrastructure.Persistence.Context;
 
-namespace SozlukWebSitesi.Persistence.EntityConfigurations
+namespace SozlukWebSitesi.Infrastructure.Persistence.EntityConfigurations
 {
     public class UserEntityConfiguration : BaseEntityConfiguration<User>
     {

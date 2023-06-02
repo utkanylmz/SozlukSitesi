@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using SozlukWebSitesiApi.Domain.Models;
-using SozlukWebSitesi.Persistence.Context;
+using SozlukSitesi.Infrastructure.Persistence.EntityConfigurations;
+using SozlukWebSitesi.Infrastructure.Persistence.Context;
 
-namespace SozlukWebSitesi.Persistence.EntityConfigurations.EntryComment
+namespace SozlukWebSitesi.Infrastructure.Persistence.EntityConfigurations.EntryComment
 {
     public class EntryCommentFavoriteEntityConfiguration : BaseEntityConfiguration<EntryCommentFavorite>
     {
@@ -15,7 +16,10 @@ namespace SozlukWebSitesi.Persistence.EntityConfigurations.EntryComment
 
             builder.HasOne(e => e.EntryComment).WithMany(e => e.EntryCommentFavorites).HasForeignKey(e => e.EntryCommentId);
 
-            builder.HasOne(e => e.CreatedUser).WithMany(e => e.EntryCommentFavorites).HasForeignKey(e => e.CreatedById).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(e => e.CreatedUser)
+                .WithMany(e => e.EntryCommentFavorites)
+                .HasForeignKey(e => e.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

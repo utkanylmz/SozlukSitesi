@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using SozlukWebSitesiApi.Domain.Models;
-using SozlukWebSitesi.Persistence.Context;
+using SozlukWebSitesi.Infrastructure.Persistence.Context;
+using SozlukWebSitesi.Infrastructure.Persistence.EntityConfigurations;
 
-namespace SozlukWebSitesi.Persistence.EntityConfigurations.EntryComment
+namespace SozlukSitesi.Infrastructure.Persistence.EntityConfigurations.EntryComment
 {
     public class EntryCommentVoteEntityConfiguration : BaseEntityConfiguration<EntryCommentVote>
     {

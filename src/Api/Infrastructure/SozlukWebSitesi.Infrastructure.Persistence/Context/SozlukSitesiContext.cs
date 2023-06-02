@@ -8,12 +8,15 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SozlukWebSitesi.Persistence.Context
+namespace SozlukWebSitesi.Infrastructure.Persistence.Context
 {
     public class SozlukSitesiContext:DbContext
     {
         public const string DEFAULT_SCHEMA = "dbo";
-
+        public SozlukSitesiContext()
+        {
+            
+        }
         public SozlukSitesiContext(DbContextOptions options):base(options)
         {
             
@@ -28,6 +31,17 @@ namespace SozlukWebSitesi.Persistence.Context
         public DbSet<EMailConfirmation> EMailConfirmations  { get; set; }
         public DbSet<EntryVote> EntryVotes { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                var connStr = "Server=DESKTOP-O1SR9H9;Database=SozlukSitesi; Trusted_Connection=True;TrustServerCertificate=True;";
+                optionsBuilder.UseSqlServer(connStr, opt =>
+                {
+                    opt.EnableRetryOnFailure();
+                });
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

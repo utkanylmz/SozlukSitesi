@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SozlukWebSitesi.Persistence.Context;
+using SozlukWebSitesi.Infrastructure.Persistence.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SozlukWebSitesi.Persistence.EntityConfigurations.Entry
+namespace SozlukWebSitesi.Infrastructure.Persistence.EntityConfigurations.Entry
 {
     public class EntryEntityConfiguration : BaseEntityConfiguration<SozlukWebSitesiApi.Domain.Models.Entry>
     {

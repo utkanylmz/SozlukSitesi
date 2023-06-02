@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SozlukWebSitesi.Persistence.Context;
+using SozlukWebSitesi.Infrastructure.Persistence.Context;
+using SozlukSitesi.Infrastructure.Persistence.EntityConfigurations;
 
-namespace SozlukWebSitesi.Persistence.EntityConfigurations.EntryComment
+namespace SozlukWebSitesi.Infrastructure.Persistence.EntityConfigurations.EntryComment
 {
     internal class EntryCommentEntityConfiguration : BaseEntityConfiguration<SozlukWebSitesiApi.Domain.Models.EntryComment>
     {
@@ -17,7 +18,10 @@ namespace SozlukWebSitesi.Persistence.EntityConfigurations.EntryComment
 
             builder.ToTable("entrycomment", SozlukSitesiContext.DEFAULT_SCHEMA);
 
-            builder.HasOne(e => e.CreatedBy).WithMany(e => e.EntryComments).HasForeignKey(e => e.CreatedById).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(e => e.CreatedBy)
+                .WithMany(e => e.EntryComments)
+                .HasForeignKey(e => e.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(e => e.Entry).WithMany(e => e.EntryComments).HasForeignKey(e => e.EntryId);
         }
