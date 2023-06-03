@@ -16,6 +16,7 @@
 		</PackageReference>
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\SozlukWebSitesiApi.Application\SozlukWebSitesiApi.Application.csproj" />
 	  <ProjectReference Include="..\..\Core\SozlukWebSitesiApi.Domain\SozlukWebSitesiApi.Domain.csproj" />
 	</ItemGroup>
 </Project>

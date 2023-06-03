@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SozlukWebSitesi.Infrastructure.Persistence.Context;
+using SozlukWebSitesi.Infrastructure.Persistence.Repositories;
+using SozlukWebSitesiApi.Application.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +28,7 @@ namespace SozlukWebSitesi.Infrastructure.Persistence.Extensions
             //var seedData = new SeedData();
             //seedData.SeedAsync(configuration).GetAwaiter().GetResult();
 
-            //services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }
