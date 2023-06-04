@@ -2,7 +2,7 @@
 
 namespace SozlukWebSitesiApi.Application.Interfaces.Repositories
 {
-    public interface IEntryFavoriteRepository : IGenericRepository<EntryCommentFavorite>
+    public interface IEntryFavoriteRepository : IGenericRepository<EntryFavorite>
     {
 
     }

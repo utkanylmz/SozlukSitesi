@@ -1,4 +1,6 @@
+using FluentValidation.AspNetCore;
 using SozlukWebSitesi.Infrastructure.Persistence.Extensions;
+using SozlukWebSitesiApi.Application.Extensions;
 internal class Program
 {
     private static void Main(string[] args)
@@ -7,12 +9,20 @@ internal class Program
 
         // Add services to the container.
 
-        builder.Services.AddControllers();
+
+        builder.Services.AddControllers()
+            .AddJsonOptions(opt =>
+            {
+                opt.JsonSerializerOptions.PropertyNamingPolicy = null;
+            })
+            .AddFluentValidation();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddApplicationRegistration();
         builder.Services.AddInfrastructureRegistration(builder.Configuration);
+       
 
         var app = builder.Build();
 
