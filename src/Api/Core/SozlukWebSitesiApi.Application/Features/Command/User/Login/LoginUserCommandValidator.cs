@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SozlukWebSitesiApi.Application.Features.Command.User
+namespace SozlukWebSitesiApi.Application.Features.Command.User.Login
 {
     public class LoginUserCommandValidator : AbstractValidator<LoginUserCommand>
     {

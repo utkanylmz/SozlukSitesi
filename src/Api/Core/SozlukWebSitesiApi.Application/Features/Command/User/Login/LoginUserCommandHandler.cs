@@ -15,7 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SozlukWebSitesiApi.Application.Features.Command.User
+namespace SozlukWebSitesiApi.Application.Features.Command.User.Login
 {
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, LoginUserViewModel>
     {
