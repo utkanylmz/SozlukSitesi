@@ -21,6 +21,14 @@ namespace SozlukWebSitesiApi.Application.Mapping
                 .ReverseMap();
             CreateMap<UpdateUserCommand,User>()
                 .ReverseMap();
+
+            CreateMap<CreateEntryCommand, Entry>()
+          .ReverseMap();
+
+            CreateMap<CreateEntryCommentCommand, EntryComment>()
+                .ReverseMap();
+
+
         }
     }
 }
