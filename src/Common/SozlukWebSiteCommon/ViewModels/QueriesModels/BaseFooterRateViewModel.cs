@@ -12,13 +12,13 @@ namespace SozlukWebSiteCommon.ViewModels.QueriesModels
 
     }
      
-    public class BaseFooterFavoriteViewModel
+    public class BaseFooterFavoritedViewModel
     {
         public bool IsFavorited { get; set; }
         public int FavoritedCount { get; set; }
     }
 
-    public class BaseFooterRateFavoriteViewModel : BaseFooterFavoriteViewModel
+    public class BaseFooterRateFavoritedViewModel : BaseFooterFavoritedViewModel
     {
         public VoteType VoteType { get; set; }
     }

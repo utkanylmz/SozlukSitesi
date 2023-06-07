@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace SozlukWebSiteCommon.ViewModels.QueriesModels
 {
-    public class GetEntryDetailViewModel: BaseFooterRateFavoritedViewModel
+    public class SearchEntryViewModel
     {
         public Guid Id { get; set; }
+
         public string Subject { get; set; }
-        public string Content { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string CreatedByUserName { get; set; }
     }
 }
