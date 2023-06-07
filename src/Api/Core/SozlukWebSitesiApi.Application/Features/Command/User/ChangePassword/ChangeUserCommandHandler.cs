@@ -36,7 +36,7 @@ namespace SozlukWebSitesiApi.Application.Features.Command.User.ChangePassword
             if (dbUser.Password != ecpPass)
                 throw new DatabaseValidationException("Old password wrong");
 
-            dbUser.Password=ecpPass;
+            dbUser.Password =PasswordEncryptor.Encrypt(request.NewPassword);
             await _userRepository.UpdateAsync(dbUser);
 
             return true;

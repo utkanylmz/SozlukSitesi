@@ -14,6 +14,7 @@ namespace SozlukWebSitesiApi.Domain.Models
         public Guid CreatedById { get; set; }
 
         public virtual Entry Entry { get; set; }
+      
 
     }
 

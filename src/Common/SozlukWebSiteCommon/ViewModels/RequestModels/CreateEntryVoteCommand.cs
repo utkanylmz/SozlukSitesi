@@ -13,9 +13,9 @@ namespace SozlukWebSiteCommon.ViewModels.RequestModels
             
         }
 
-        public CreateEntryVoteCommand(Guid entryCommentId, VoteType voteType, Guid createdBy)
+        public CreateEntryVoteCommand(Guid entryId, VoteType voteType, Guid createdBy)
         {
-            EntryCommentId = entryCommentId;
+            EntryId = entryId;
             VoteType = voteType;
             CreatedBy = createdBy;
         }

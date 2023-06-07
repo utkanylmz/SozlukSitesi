@@ -29,6 +29,9 @@ namespace SozlukWebSitesi.Infrastructure.Persistence.Extensions
             //seedData.SeedAsync(configuration).GetAwaiter().GetResult();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IEMailConfirmationRepository, EMailConfirmationRepository>();
+            services.AddScoped<IEntryRepository, EntryRepository>();
+            services.AddScoped<IEntryCommentRepository, EntryCommentRepository>();
 
             return services;
         }
