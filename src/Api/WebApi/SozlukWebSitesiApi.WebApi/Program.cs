@@ -1,6 +1,8 @@
 using FluentValidation.AspNetCore;
 using SozlukWebSitesi.Infrastructure.Persistence.Extensions;
 using SozlukWebSitesiApi.Application.Extensions;
+using SozlukWebSitesiApi.WebApi.Infrastructure.Extensions;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -20,6 +22,8 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.ConfigureAuth(builder.Configuration);
+
         builder.Services.AddApplicationRegistration();
         builder.Services.AddInfrastructureRegistration(builder.Configuration);
        
@@ -35,6 +39,9 @@ internal class Program
 
         app.UseHttpsRedirection();
 
+        app.ConfigureExceptionHandling(app.Environment.IsDevelopment());
+
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
